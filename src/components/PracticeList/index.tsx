@@ -3,12 +3,14 @@ import type { Practice } from "@/types/practice";
 
 type PracticeListProps = {
   practices: Practice[];
+  contextTitle: string;
   selectedPracticeId?: string;
   onSelectPractice: (practice: Practice) => void;
 };
 
 export default function PracticeList({
   practices,
+  contextTitle,
   selectedPracticeId,
   onSelectPractice,
 }: PracticeListProps) {
@@ -24,6 +26,7 @@ export default function PracticeList({
         <PracticeCard
           key={practice.id}
           practice={practice}
+          contextTitle={contextTitle}
           isSelected={selectedPracticeId === practice.id}
           onSelect={onSelectPractice}
         />

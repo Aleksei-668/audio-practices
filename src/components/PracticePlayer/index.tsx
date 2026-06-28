@@ -31,16 +31,20 @@ export default function PracticePlayer({
 
   return (
     <section className="space-y-6">
-      <div className="rounded-3xl bg-[#2f2a24] p-6 text-white shadow-sm">
+      <div className="rounded-3xl bg-[#2f2a24] p-5 text-white shadow-sm sm:p-6">
         {selectedPractice ? (
           <>
             <p className="mb-2 text-sm uppercase tracking-[0.18em] text-[#d9c4aa]">
               {selectedContext?.title}
             </p>
 
-            <h2 className="mb-5 text-3xl font-bold">
+            <h2 className="mb-3 text-2xl font-bold leading-tight sm:text-3xl">
               {selectedPractice.title}
             </h2>
+
+            <p className="mb-5 text-sm text-[#d9c4aa]">
+              Выберите практику и нажмите Play.
+            </p>
 
             {selectedPractice.description ? (
               <p className="mb-5 text-[#eadfce]">
@@ -54,7 +58,15 @@ export default function PracticePlayer({
             </audio>
           </>
         ) : (
-          <p>Нет доступных практик.</p>
+          <div>
+            <h2 className="mb-2 text-2xl font-bold">
+              Выберите практику
+            </h2>
+            <p className="text-[#eadfce]">
+              Откройте подходящий контекст, выберите аудиопрактику и нажмите
+              Play.
+            </p>
+          </div>
         )}
       </div>
 
