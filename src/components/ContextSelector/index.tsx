@@ -19,7 +19,11 @@ export default function ContextSelector({
   return (
     <div className="space-y-4">
       {groups.map((group) => (
-        <details key={group.id} className="rounded-3xl bg-white p-5 shadow-sm">
+        <details
+          key={group.id}
+          open
+          className="rounded-3xl bg-white p-5 shadow-sm"
+        >
           <summary className="cursor-pointer list-none">
             <div className="flex items-center justify-between gap-4">
               <h2 className="text-2xl font-bold">{group.title}</h2>
